@@ -1,0 +1,70 @@
+---
+title: "First Blog post"
+author: "Catherine Blatter"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(datasauRus)
+library(gganimate)
+library(gifski)
+knitr::opts_chunk$set(echo = FALSE)
+```
+
+## Intro
+
+This is my very first blog post and mostly a tryout for using Rmarkdown for Wordpress.
+In order to try out numerical code and graphical output, I used the datasaurus-dozen-dataset from the 
+[datasauRus-package](https://itsalocke.com/datasaurus/). The awesome thing about these datasets is that while all twelve datasets share the same summary statistics, they look very differently.  
+That's where visualization comes around...
+
+Credit to the content of this post goes to [Steph Locke](https://itsalocke.com) and [Mitch O'Hara Wild](https://github.com/numbats/gganimate-workshop/blob/master/index.Rmd) - the gganimate-workshop is a great resource.
+
+### Numerical summary of the datasaurus-dataset
+
+As you can see every dataset shares the same summary statistics...  
+
+```{r sum_num_datsaurus}
+
+datasaurus_dozen %>% 
+    group_by(dataset) %>% 
+    summarize(
+      mean_x    = mean(x),
+      mean_y    = mean(y),
+      std_dev_x = sd(x),
+      std_dev_y = sd(y),
+      corr_x_y  = cor(x, y)
+    )
+
+```
+
+### Plots
+
+When we visualize this using *ggplot2* we see how different the datasets actually look...  
+
+
+```{r sum_graph_datasaurus}
+
+ggplot(datasaurus_dozen, aes(x=x, y=y, colour=dataset))+
+  geom_point()+
+  theme_void()+
+  theme(legend.position = "none")+
+  facet_wrap(~dataset, ncol=3)
+
+```
+
+
+### Animation
+
+Last but not least: For the sake of fun we implement code from the [numbats-workshop] (https://github.com/numbats/gganimate-workshop/blob/master/index.Rmd): 
+
+```{r sum_animation_datasaurus}
+ggplot(datasaurus_dozen) +
+  aes(x, y) +
+  geom_point() +
+  transition_states(dataset, 3, 1) +
+  labs(title = "Dataset: {closest_state}")
+```
+
+
