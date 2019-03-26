@@ -37,12 +37,13 @@ options(WordpressLogin = c(username = 'password'),
 #         action = "newPost",
 #         publish = FALSE)
 
+# Knit to WordPress
 
-knit2wp('yourfile.Rmd', 
-        postid = id,
+knit2wp('yourfile.Rmd',
         title = 'Your post title',
-        shortcode = F, 
-        action = 'editPost', 
-        publish = F)
+        shortcode = F,
+        categories = 'Coding',
+        action = 'newPost', 
+        publish = T)
 
 
