@@ -3,6 +3,10 @@
 ###############################################
 
 
+# You need to have git (a version control system) installed on your
+# computer - see here: https://happygitwithr.com/install-git.html
+
+
 # 1. Prefix ---------------------------------------------------------------
 ## install necessary packages 
 
