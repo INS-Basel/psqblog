@@ -30,12 +30,12 @@ options(WordpressLogin = c(username = 'password'),
         WordpressURL = 'https://psq.nursing.unibas.ch/xmlrpc.php')
 
 
-# this command lets you then update
-id <- knit2wp('yourfile.Rmd', 
-        title = "Your posts title",
-        categories = "Code",
-        action = "newPost",
-        publish = FALSE)
+# # this command lets you then update
+# id <- knit2wp('yourfile.Rmd', 
+#         title = "Your posts title",
+#         categories = "Code",
+#         action = "newPost",
+#         publish = FALSE)
 
 
 knit2wp('yourfile.Rmd', 
