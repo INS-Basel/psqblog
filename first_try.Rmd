@@ -19,7 +19,7 @@ In order to try out numerical code and graphical output, I used the datasaurus-d
 [datasauRus-package](https://itsalocke.com/datasaurus/). The awesome thing about these datasets is that while all twelve datasets share the same summary statistics, they look very differently.  
 That's where visualization comes around...
 
-Credit to the content of this post goes to [Steph Locke](https://itsalocke.com) and [Mitch O'Hara Wild](https://github.com/numbats/gganimate-workshop/blob/master/index.Rmd) - the gganimate-workshop is a great resource.
+Credit to the content of this post goes to [Steph Locke](https://itsalocke.com) and [Mitchell O'Hara Wild](https://github.com/numbats/gganimate-workshop/blob/master/index.Rmd) - the gganimate-workshop is a great resource.
 
 ### Numerical summary of the datasaurus-dataset
 
